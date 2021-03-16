@@ -23,7 +23,7 @@
         <EditText
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:id="@+id/editMessage"/>
+            android:id="@+id/editMessageE"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
