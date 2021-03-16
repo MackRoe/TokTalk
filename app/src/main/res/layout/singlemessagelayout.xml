@@ -12,7 +12,7 @@
         android:text="Test User"
         android:padding="5dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp "
+        android:layout_marginRight="5dp"
         android:id="@+id/usernameText"
         />
     <TextView
