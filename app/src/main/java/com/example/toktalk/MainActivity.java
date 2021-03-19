@@ -1,6 +1,8 @@
 package com.example.toktalk;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -16,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText editMessage;
     private DatabaseReference mDatabase;
+    private RecyclerView mMessageList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +27,11 @@ public class MainActivity extends AppCompatActivity {
 
         editMessage = (EditText) findViewById(R.id.editMessageE);
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Messages");
+
+        mMessageList.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setStackFromEnd(true);
+        mMessageList.setLayoutManager(linearLayoutManager);
     }
 
     public void sendButtonClicked(View view ){
