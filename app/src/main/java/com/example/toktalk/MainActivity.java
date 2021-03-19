@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -48,6 +49,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
+        FirebaseRecyclerAdapter <Message,MessageViewHolder> FBRA = new FirebaseRecyclerAdapter<Message, MessageViewHolder>(
+
+                Message.class,
+                R.layout.singlemessagelayout,
+                MessageViewHolder.class,
+                mDatabase
+        ) {
+            @Override
+            protected void populateViewHolder(MessageViewHolder viewHolder, Message model, int position) {
+                viewHolder.setContent(model.getContent());
+            }
+        };
+        mMessageList.setAdapter(FBRA);
     }
 
     public static class MessageViewHolder extends RecyclerView.ViewHolder{
