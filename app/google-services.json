@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "982150002198",
+    "firebase_url": "https://toktalk-2878f-default-rtdb.firebaseio.com",
+    "project_id": "toktalk-2878f",
+    "storage_bucket": "toktalk-2878f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982150002198:android:2be078f2a432948bc7e737",
+        "android_client_info": {
+          "package_name": "com.example.toktalk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982150002198-hdufpu3590alini89mfm85nrn6bc2mpr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3pW1vflnbQV2kWBp8i7Zzy8kNaIGhUHo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "982150002198-hdufpu3590alini89mfm85nrn6bc2mpr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
