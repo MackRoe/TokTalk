@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        FirebaseRecyclerAdapter <Message,MessageViewHolder> FBRA = new FirebaseRecyclerAdapter<Message, MessageViewHolder>(
+        FirebaseRecyclerAdapter <Message, MessageViewHolder> FBRA = new FirebaseRecyclerAdapter<Message, MessageViewHolder>(
 
                 Message.class,
                 R.layout.singlemessagelayout,
@@ -58,11 +59,16 @@ public class MainActivity extends AppCompatActivity {
                 mDatabase
         ) {
             @Override
-            protected void populateViewHolder(MessageViewHolder viewHolder, Message model, int position) {
-                viewHolder.setContent(model.getContent());
+            protected void onBindViewHolder(@NonNull MessageViewHolder holder, int position, @NonNull Message model) {
+
+            }
+
+            @NonNull
+            @Override
+            public MessageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                return null;
             }
         };
-        mMessageList.setAdapter(FBRA);
     }
 
     public static class MessageViewHolder extends RecyclerView.ViewHolder{
