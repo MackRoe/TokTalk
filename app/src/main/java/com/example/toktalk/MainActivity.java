@@ -51,13 +51,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        FirebaseRecyclerAdapter <Message, MessageViewHolder> FBRA = new FirebaseRecyclerAdapter<Message, MessageViewHolder>(
-
-                Message.class,
-                R.layout.singlemessagelayout,
-                MessageViewHolder.class,
-                mDatabase
-        ) {
+        FirebaseRecyclerAdapter <Message, MessageViewHolder> FBRA = new FirebaseRecyclerAdapter<Message, MessageViewHolder>() {
             @Override
             protected void onBindViewHolder(@NonNull MessageViewHolder holder, int position, @NonNull Message model) {
 
@@ -84,4 +78,5 @@ public class MainActivity extends AppCompatActivity {
             message_content.setText(content);
         }
     }
-}
+
+    }
